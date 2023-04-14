@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Temperature Converter</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		.container {
+			margin: auto;
+			max-width: 500px;
+			padding: 20px;
+			background-color: #fff;
+			
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+
+		input[type="number"] {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+			background-color: #f2f2f2;
+			margin-bottom: 20px;
+		}
+
+		.btn {
+			display: block;
+			padding: 10px;
+			background-color: #4CAF50;
+			color: #fff;
+			text-align: center;
+			border-radius: 5px;
+			text-decoration: none;
+			margin: 20px auto;
+			width: 100%;
+			max-width: 200px;
+		}
+
+		.result {
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	
+ <h1 style="color:#120f0f"><i>Welcome to temperature converter website</i></h1>
+</div class="contact details">
+<h2>Contact Details</h2>
+<p>if any query occur related  than contact us on this number.</p>
+<a href="#" class="cta">xxxxxxxxxx</a>
+
+</div class="about">
+  <h2>About Us</h2>
+  <a href="#"class="cta">Learn More</a>
+	<br>
+	<div class="intro" style="background-image:url(https://res.cloudinary.com/practicaldev/image/fetch/s--J8_u7rHr--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zqj0w0751zqo4c49vhq3.jpg) ; background-size: 100% 100%;">
+	<h1>"Temperature Converter"</h1>
+	<div class="container">
+		<form>
+			
+			<label for="celsius">Celsius:</label>
+			<input type="number" id="celsius" name="celsius" placeholder="Enter temperature in Celsius">
+
+			<label for="fahrenheit">Fahrenheit:</label>
+			<input type="number" id="fahrenheit" name="fahrenheit" placeholder="Enter temperature in Fahrenheit">
+
+			<button type="button" class="btn" onclick="convert()">Convert</button>
+			</div>
+
+			<p class="result" id="result"></p>
+		</form>
+	</div>
+
+	<script>
+		function convert() {
+			var celsius = document.getElementById("celsius").value;
+			var fahrenheit = document.getElementById("fahrenheit").value;
+
+			if (celsius != "" && fahrenheit == "") {
+				var result = parseFloat(celsius) * 9 / 5 + 32;
+				document.getElementById("result").innerHTML = result + " °F";
+			} else if (celsius == "" && fahrenheit != "") {
+				var result = (parseFloat(fahrenheit) - 32) * 5 / 9;
+				document.getElementById("result").innerHTML = result + " °C";
+			} else {
+				alert("Please enter a value for either Celsius or Fahrenheit");
+			}
+		}
+	</script>
+</body>
+</html>
